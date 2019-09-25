@@ -1,0 +1,165 @@
+SINGLY LINKED LIST
+
+- ordered list of data
+
+- in an array every element is mapped by its index
+- SLL - each node only connected one directionaly to the next node
+- contains HEAD (beginning), TAIL (end) and LENGTH properties
+
+HEAD - begining of linked list
+TAIL - the end of LL
+
+
+COMPARE TO ARRAY / LIST
+
+LL
+
+- don't have indexes
+- connected via nodes with a "next" pointer
+- random access is not allowed
+- good at insertion and deletion
+- not as efficient as arrays when retrieving an object by its index
+
+
+Arrays / Lists
+
+- Indexed in order
+- Insertion and deletion can be expensive (elements need to be re-indexed)
+- can quickly be accessed at a specific index
+
+
+Big O of SLL
+
+Insertion - O(1) on beginning and end  --> list has O(1) from end (push / append)
+Removal - O(1) from start, O(n) from the end --> list has O(1) from end (pop), O(n) for shift
+Searching - O(n) --> list has O(n)
+Access - O(n) --> list has O(1) for accessing by index
+
+
+Singly linked list are an excelent alternative to arrays when insertion and
+deletion at the beginning are frequently required
+
+
+
+METHODS
+
+
+PUSH (add a node to the end of the list)
+
+pseudocode:
+- this function should accept a value
+- create a new node using the value passed to the function
+- if there is no head property on the list, set the head and tail to be
+  the newly created node
+- otherwise set the next property on the tail to be the new node and set the
+  tail property on the list to be newly created node
+
+  HEAD ---- el -- el ---- TAIL
+
+- increment the length by one
+- return the list
+
+
+POP (remove a node from the end of the list)
+
+- we need to assign a new tail (go all the way through list --> don't have a pointer
+  to the second to last item; from the last one)
+- so we need to traverse the list, and find element second to last and set the tail
+
+pseudocode:
+- define a method called pop
+- if there are no nodes in the list, return undefined
+- loop through the list until you reach a element before the tail
+- set that node to be the tail and its next to null
+- decrement the list
+- return popped element
+
+
+SHIFT (remove node from begining of the list)
+
+pseudocode:
+- if no nodes return undefined
+- set head.next to new head
+- decrement by one
+- return old head
+
+
+
+UNSHIFT (add node to the beginning of the list)
+
+pseudocode:
+- function unshift() should accept a value
+- create new node
+- if there is no head, set the head and tail to the new node
+- set the new node's next to the current head
+- set the new node to be a new head
+- increment list
+- return linked list
+
+
+
+GET
+
+- takes a index (position) and returns a value by that index
+- O should return us the head
+
+pseudocode:
+- function (get) should accept an index
+- if the index is less than zero or greater than or equal to the length of the list,
+  return  null
+- loop through the list until you reach the index and return the node at that index
+
+
+
+SET
+
+- change value of existing element on required index
+
+pseudocode:
+- set takes a index and a value as a second argument
+- use get function to find specidfic node
+- if node doesn't exist return false
+- else, change the value of that node to be the value passed and return true
+
+
+
+INSERT
+
+- insert a new value based on position
+
+pseudocode:
+- if the index is less than zero or greater than length, return false
+- if the index is the same as length, push a new element to the end
+- if the index is 0, unshift new element to the beginning
+- else:
+  - find the element on index - 1 position
+  - set the next of that node to be newly created node
+  - set the next of new node to the old next node
+  - increment length
+- always return true or false
+
+
+
+REMOVE
+
+- remove an item from the index position
+
+- if the index is less than zero or greater than or equal to length, return undefined
+- if the index is the same as the length - 1, pop
+- if the index is 0, shift
+- else:
+  - use our get method to get the previous node
+  - set the next of the previous node to be the next of removing node
+
+
+
+REVERSE
+
+pseudocode:
+- swap head and tail
+- create a variables called next, prev, and node which is head at this point
+- loop through the list:
+  - set next to be the next property on whatever node is
+  - set the next prop on node to whatever prev node is
+  - set prev to be the value of the node variable
+  - set the node variable to be the value of the next variable
