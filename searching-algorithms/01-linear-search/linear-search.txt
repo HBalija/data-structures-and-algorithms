@@ -1,0 +1,14 @@
+LINEAR SEARCH on arrays / lists
+
+- loop over an array and see if item exists
+
+
+built in methods that do that:
+
+- indexOf
+- includes
+- find
+- findIndex
+
+
+Time complexity: O(n)

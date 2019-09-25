@@ -1,0 +1,10 @@
+
+BINARY SEARCH
+
+- eliminate half of the remaining elements in each iteration
+- only works on sorted lists
+
+
+TIME COMPLEXITY
+
+average case --> O(log n)
