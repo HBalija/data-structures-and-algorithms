@@ -1,0 +1,124 @@
+DOUBLY LINKED LISTS
+
+- Almost identical to SLL, except every node points to the next one and the previous one
+
+
+CONS:
+- code is a bit trickier than on SLL
+- it takes more memory (two pointers)
+
+
+Big O of Doubly linked lists
+
+insertion - O(1) - from beginning and end
+removal - O(1) - from beginning and end
+searching - O(n)
+access - O(n)
+
+Technically searching is O(n / 2) --> O(n)
+
+
+METHODS
+
+
+PUSH
+
+pseudocode:
+- create an new node with value passed
+- check if list is empty, if it is head and tail are new node
+- if not:
+  - set the next property on the tail to be new node
+  - set the prev property of new node to be the old tail
+  - set the new node to be the tail
+  - increment length
+  - return list
+
+
+POP
+
+pseudocode:
+- if there is no tail, return undefined
+- otherwise:
+  - store the current tail
+  - if the length is 1 set the head and the tail to be null
+  - update the tail to be the previous node, and its next to null
+  - clean the reference: set the previous tail prev to null
+  - subtract the length
+  - return the value
+
+
+SHIFT
+
+pseudocode:
+- if len is 0 , return undefined
+- store the current head property
+- if the length is 0; set the head and tail to null
+- set new head prev to null
+- set old head next to null
+- decrement
+- return old head
+
+
+UNSHIFT
+
+pseudocode:
+- create a new node with the value passed to the function
+- if length is 0
+  - set the head to be the new node
+  - set the tail to be new node
+- otherwise
+  - set the prev property on the head of the list to be the new node
+  - set the next property on the new node to be current head
+  - update the head to be the new node
+- increment
+- return the list
+
+
+GET
+
+- we don't need to iterate always from the left cause we have two pointers
+  --> depending on the index
+
+pseudocode:
+- if the index is less than 0 or greater than / equal to length; return null
+- otherwise:
+  - check if index is less than or equal to half the length of the list
+    - loop through the list starting from head towards the middle
+    - return the node
+  - check if index i greater than half the list length
+    - loop through the mid from the tail
+    - return the node
+
+
+SET
+
+pseudocode
+- create a variable which is the result of get method at the index
+  passed to the function
+- if the get method returns a valid node, set the value of that node to be
+  the value passed
+- return true
+
+
+INSERT
+- if the index is less than 0 or greater than length; return false
+- if index === 0, unshift
+- if index  ==== length -1, push
+otherwise:
+  - use get method to access the item on position index -1
+  - set correctly next and prev connections
+- increment
+- return true
+
+
+REMOVE
+
+pseudocode:
+- if the index is less than 0 or equal / greater than length return undefined
+- if the index is 0, shift
+- if the index is length - 1, pop
+- otherwise:
+  - use get method to retrive the item
+  - update next and prev properties
+  - decrement
+  - return item
