@@ -1,0 +1,24 @@
+Selection Sort
+
+How it works?
+
+We iterate over a list starting with first element and if element compared is smaller,
+store its index. After first iteration swap the smallest element with the first one. Reiterate
+from second element.
+
+
+pseudocode:
+- store the first element index as the smallest value so far
+- compare this item to next item in array until you find a smaller number
+- if a smaller number is found, designate that smaller number to be the new minimum
+  and continue untill the end of array
+- swap values if new min
+- repeat the process with the next item
+
+
+Time complexity:
+
+
+O(n**2)time
+
+- only better than bubble sort if swap() call is limited

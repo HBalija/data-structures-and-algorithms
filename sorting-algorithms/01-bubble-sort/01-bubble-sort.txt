@@ -16,6 +16,13 @@ How it works
 
 
 
+pseudocode:
+- start looping from the end of the array towards the beginning (var i)
+- start an inner loop from beginning untill i-1 (var j)
+- if arr[j] is greater than arr[j+1], swap those two
+- return sorted array
+
+
 
 Time complexity: O(n**2) in general
 
