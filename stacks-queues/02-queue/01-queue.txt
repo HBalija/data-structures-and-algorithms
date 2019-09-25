@@ -1,0 +1,26 @@
+QUEUE
+
+- FIFO data structure (first in first out)
+
+
+usage:
+- background tasks (python celery for example)
+- uploading resources
+- printing / task processing
+
+
+
+array / list implementation:
+
+- push() and shift()
+- unshift() and pop()
+
+- both shift() and unshift() have O(n)time --> array not a good choice
+
+
+Big O of queues
+
+Insertion (push) - O(1)time
+Removal (pop) - O(1)time
+Searching - O(n)time
+Access - O(n)time

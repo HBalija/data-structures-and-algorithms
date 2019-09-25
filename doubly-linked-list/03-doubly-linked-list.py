@@ -2,6 +2,7 @@
 
 
 class Node:
+
     def __init__(self, value):
         self.value = value
         self.prev = None
@@ -9,6 +10,7 @@ class Node:
 
 
 class DoublyLinkedList:
+
     def __init__(self):
         self.length = 0
         self.head = None

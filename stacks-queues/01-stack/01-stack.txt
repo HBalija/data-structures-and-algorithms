@@ -1,0 +1,24 @@
+STACK
+
+- LIFO data structure (Last in first out)
+
+
+uses:
+- managing function invocations (call stack in recursion)
+- undo / redo functionality
+- routing (the history object)
+- use din other algorithms
+
+
+array / list implementation:
+- pop(), push() --> O(1) --> good choice for a stack
+- shift(), unshift() --> O(n)
+
+
+Big O
+
+insertion (push) - O(1)time
+Removal (pop) - O(1)time
+
+Sarching - O(n)
+Access - O(n)
