@@ -8,11 +8,11 @@ def binary_search(lst, num):
 
     while left <= right:
         mid = (left + right) // 2
-        if num == lst[mid]:
+        if num == lst[mid]:  # it's a match
             return mid
-        if num < lst[mid]:
+        if num < lst[mid]:  # number smaller than mid, smaller half for next iteration
             right = mid - 1
-        elif num > lst[mid]:
+        elif num > lst[mid]:  # number larger than mid, larger half for next iteration
             left = mid + 1
     return -1
 

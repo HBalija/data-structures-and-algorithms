@@ -1,0 +1,22 @@
+BUBBLE SORT
+
+A sorting algorithm where the largest values bubble up to the top
+
+
+
+How it works
+
+- when we loop through each item, we compare it to the next item, and if
+  it is bigger we swap their places
+- then compare it to the next item
+- if we don't swap, we move to the next item in array and compare
+- after first iteration the largest number will be on top
+- after second, second largest will be next to the largest ...
+- if no swaps made in iteration, list is sorted
+
+
+
+
+Time complexity: O(n**2) in general
+
+but if the data is nearly sorted, we get O(n)time

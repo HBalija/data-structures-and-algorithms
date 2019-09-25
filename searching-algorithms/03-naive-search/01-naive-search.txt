@@ -1,0 +1,4 @@
+Use double iteration to find out how many times a substring repeats itself
+inside a string.
+
+ - useful for searching for pairs

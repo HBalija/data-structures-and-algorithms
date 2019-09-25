@@ -2,6 +2,11 @@
 
 
 def collect_odd_values(lst):
+    """
+    Return odd values from given array.
+
+    Function uses recursive helper method.
+    """
     result = []
 
     def helper(sub_lst):

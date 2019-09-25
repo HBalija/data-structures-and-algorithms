@@ -1,4 +1,3 @@
-
 const binarySearch = (arr, num) => {
   // Divide and conquer
 

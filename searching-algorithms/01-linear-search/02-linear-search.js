@@ -1,4 +1,3 @@
-
 const linearSearch = (arr, num) => {
   // return index of element if found
 

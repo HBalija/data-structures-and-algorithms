@@ -1,4 +1,3 @@
-
 // Collect all odd values in array
 
 const collectOddValues = arr => {
