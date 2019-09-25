@@ -2,17 +2,21 @@
 
 
 def binary_search(lst, num):
+    """
+    Return index of searched num if in list.
 
+    Otherwise return -1.
+    """
     left = 0
     right = len(lst) - 1
 
     while left <= right:
         mid = (left + right) // 2
-        if num == lst[mid]:  # it's a match
+        if num == lst[mid]:
             return mid
-        if num < lst[mid]:  # number smaller than mid, smaller half for next iteration
+        if num < lst[mid]:
             right = mid - 1
-        elif num > lst[mid]:  # number larger than mid, larger half for next iteration
+        elif num > lst[mid]:
             left = mid + 1
     return -1
 

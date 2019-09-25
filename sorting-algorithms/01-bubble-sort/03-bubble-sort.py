@@ -3,7 +3,6 @@
 
 def bubble_sort(lst):
     i = len(lst) - 1
-    no_swaps = True
     for el in range(i, -1, -1):
         j = 0
         no_swaps = True

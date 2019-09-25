@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+
+
 def selection_sort(lst):
 
     for el in enumerate(lst):

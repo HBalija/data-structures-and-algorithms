@@ -1,0 +1,23 @@
+Elementary sorting algorithms:
+
+Bubble sort, Insertion sort, Selection sort
+
+- often call quadratic sorting algorithms
+
+Big O
+
+                    Time (best)   Time (avg)    Time (worst)    Space
+Bubble sort             O(n)        O(n**2)       O(n**2)        O(1)
+Insertion sort          O(n)        O(n**2)       O(n**2)        O(1)
+Selection sort         O(n**2)      O(n**2)       O(n**2)        O(1)
+
+
+- bubble sort and insertion sort algorithm work well if data is almost sorted
+- insertion sort works well if data is comming in (like stream)
+
+
+Intermediate sorting algorithms:
+
+Merge sort, Quick sort, Radix sort (not comparison sorting algorithm)
+
+- O(n log n)time

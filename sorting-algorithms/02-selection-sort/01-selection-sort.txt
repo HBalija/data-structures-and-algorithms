@@ -1,6 +1,7 @@
-Selection Sort
+SELECTION SORT
 
-How it works?
+
+How it works
 
 We iterate over a list starting with first element and if element compared is smaller,
 store its index. After first iteration swap the smallest element with the first one. Reiterate

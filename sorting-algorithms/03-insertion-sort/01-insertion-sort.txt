@@ -1,0 +1,26 @@
+INSERTION SORT
+
+Builds up the sort by gradually creating a larger portion that is always sorted
+- it takes each element and places it where it should go in the sorted portion
+
+
+
+How it works
+
+We start from left to right (from second element) and take every element and place it
+on its proper place.
+
+
+pseudocode:
+- start by picking the second element in the array (first element is in sorted portion)
+- compare the second element with the one before and swap if required
+- compare every next element with the sorted portion and place it where required
+
+
+Time complexity:
+
+worst case: O(n**2)time
+
+if data is almost sorted: O(n)time
+
+- good use: if data is comming in streaming, quick insert
