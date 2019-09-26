@@ -11,8 +11,6 @@ class Node:
 
 class BinarySearchTree:
 
-    vlaues = []
-
     def __init__(self):
         self.root = None
 

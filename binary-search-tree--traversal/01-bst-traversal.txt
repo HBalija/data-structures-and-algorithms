@@ -2,6 +2,8 @@ BINARY SEARCH TREE TRAVERSE
 
 - Breadth-first search
   - horizontal: visit all the sibling nodes first
+  - good use: if tree is not so wide
+
 
 - Depth-first search
   - vertical
@@ -9,6 +11,7 @@ BINARY SEARCH TREE TRAVERSE
   a) DFS PreOrder
     - traverse left from root, and then traverse the right from root
     - before moving to the next node, store the value of visited node
+    - good use: for tree cloning or storing - tree structure is visible from returned results
 
   b) DFS PostOrder
     - traverse from the root, to the left and right
@@ -16,6 +19,7 @@ BINARY SEARCH TREE TRAVERSE
 
   c) DFS InOrder
     - first traverse left side of the node, visit the node, and then traverse right side
+    - good use: for in order items display
 
 
 
@@ -61,8 +65,6 @@ DFS - PostOrder
 
 
 DFS - InOrder
-
-Steps Recursively
 
 - create a variable to store the values of nodes visited
 - write a helper function which accepts a node
