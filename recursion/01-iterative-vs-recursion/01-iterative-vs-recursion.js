@@ -5,9 +5,9 @@ const countDownIteratively = num => {
     console.log(i);
   }
   console.log('All done');
-}
+};
 
-countDownIterativly(10);
+countDownIteratively(10);
 /*
 10
 9
@@ -35,7 +35,7 @@ const countDown = num => {
   num--;
   // self calling
   countDown(num);
-}
+};
 
 countDown(10);
 /*

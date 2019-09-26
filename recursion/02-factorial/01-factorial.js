@@ -14,7 +14,7 @@ const factorialIterativly = num => {
     total *= i;
   }
   return total;
-}
+};
 
 console.log(factorialIterativly(4)); // 24
 
@@ -24,6 +24,6 @@ console.log(factorialIterativly(4)); // 24
 const factorial = num => {
   if (num === 1) return num;
   return num * factorial(num - 1);
-}
+};
 
 console.log(factorial(4)); // 24

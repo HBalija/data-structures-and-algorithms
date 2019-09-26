@@ -1,0 +1,56 @@
+BINARY SEARCH TREE (BST)
+
+
+HOW THEY WORK (numbers example):
+- every number that is less than some nodes value is located left of it
+- every number that is greater than nodes value is located to the right
+
+
+used for:
+- data that can be compared (sortable) - numbers, strings...
+
+
+BST Complexity
+
+Insertion - O(log n)time
+Searching - O(log n)time
+
+
+METHODS
+
+INSERT
+
+pseudocode:
+- create a new node
+- starting at the root:
+  - check if there is a root; if not - the root now becomes that new node
+  - if there is a root; check if the value of that node is greater or less
+    than the value of root
+  - if it is greater:
+    - check to see if there is a node to the right
+      - if there is, move that node and repeat these steps
+      - if there is not, add that node as the right property
+  - if it is less:
+    - check to see if there is a node to the left
+      - if there is, move that node and repeat these steps
+      - if there is not, add that node as the left property
+- return list
+- if value already exists, return null
+
+
+FIND
+
+pseudocode:
+- starting at the root
+  - check if there is a root; if not, we're done searching
+  - if there is a root; compare value to the root
+  - if not, check to see if value is greater than or less than
+    the value of the root
+    - if it's greater:
+      - check to see if there is a node to the right
+        - if there is move to that node and repeat these steps
+        - if there is not, we're done searching
+    - if it is less:
+      - check to see if there is a node to the left
+        - if there is move to that node and repeat these steps
+        - if there is not, we're done searching

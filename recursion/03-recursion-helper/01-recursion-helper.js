@@ -18,6 +18,6 @@ const collectOddValues = arr => {
 
   helper(arr);
   return result;
-}
+};
 
 console.log(collectOddValues([1, 2, 4, 3, 5, 66, 77, 89])); // [1, 3, 5, 77, 89]
