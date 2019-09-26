@@ -1,0 +1,75 @@
+BINARY SEARCH TREE TRAVERSE
+
+- Breadth-first search
+  - horizontal: visit all the sibling nodes first
+
+- Depth-first search
+  - vertical
+
+  a) DFS PreOrder
+    - traverse left from root, and then traverse the right from root
+    - before moving to the next node, store the value of visited node
+
+  b) DFS PostOrder
+    - traverse from the root, to the left and right
+    - store the value after traversing through all child nodes
+
+  c) DFS InOrder
+    - first traverse left side of the node, visit the node, and then traverse right side
+
+
+
+METHODS:
+
+
+BFS
+
+- create a queue (this can be an array) and a variable to store the values of visited nodes
+- place the root node in the queue
+- loop as long as there is anything in the queue
+  - dequeue a node from the queue and push the value of the node into the variable that stores thre nodes
+  - if there is a left property on the node dequeued - add it to the queue
+  - if there is a right property on the node dequeued - add it to the queue
+- return the variable that stores all the values
+
+
+DFS - PreOreder
+
+- create a variable to store the values of nodes visited
+- write a helper function which accepts a node
+  - push the value of the node to the variable that stores the values
+  - if the node has a left property, recursively call the helper function with the
+    left property on the node
+  - if the node has a right property, recursively call the helper function with the right
+    property on the node
+- call helper function with root node
+- return values
+
+
+DFS - PostOrder
+
+- create a variable to store the values of nodes visited
+- write a helper function which accepts a node
+  - if the node has a left property, recursively call the helper function with the
+    left property on the node
+  - if the node has a right property, recursively call the helper function with the right
+    property on the node
+  - push the value of the node to the variable that stores the values
+- call helper function with root node
+- return values
+
+
+
+DFS - InOrder
+
+Steps Recursively
+
+- create a variable to store the values of nodes visited
+- write a helper function which accepts a node
+  - if the node has a left property, recursively call the helper function with the
+    left property on the node
+  - push the value of the node to the variable that stores the values
+  - if the node has a right property, recursively call the helper function with the right
+    property on the node
+- call helper function with root node
+- return values
