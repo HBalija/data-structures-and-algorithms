@@ -25,6 +25,8 @@ rules:
   max-len:
     - 1
     - 100
+  no-unused-vars:
+    - 0
   no-var:
     - 2
   prefer-const:
