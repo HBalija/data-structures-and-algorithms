@@ -31,3 +31,5 @@ rules:
     - 2
   prefer-const:
     - 2
+  no-constant-condition:
+    - 0

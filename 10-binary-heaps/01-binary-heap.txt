@@ -37,6 +37,14 @@ rightChildIdx = 2 * idx + 2;    # 41 (idx = 2) --> right child 27 (idx = 6)
 
 
 
+Big O of Binary Heaps
+
+Insertion - O(log N)
+Removal - O(log N)
+Search - O(N)
+
+
+
 METHODS:
 
 

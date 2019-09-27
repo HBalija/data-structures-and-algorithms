@@ -21,7 +21,7 @@ class BinarySearchTree {
 
     let current = this.root;
 
-    while (true) { // eslint-disable-line no-constant-condition
+    while (true) {
 
       if (value === current.value) return null;
 

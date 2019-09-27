@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+
+
 class MaxBinaryHeap:
 
     values = []
@@ -33,7 +36,6 @@ class MaxBinaryHeap:
         # bubble down
         idx = 0
         while True:
-            # eslint-disable-line no-constant-condition
             leftChildIdx = 2 * idx + 1
             rightChildIdx = 2 * idx + 2
 

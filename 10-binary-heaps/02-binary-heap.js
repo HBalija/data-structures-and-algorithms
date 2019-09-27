@@ -33,7 +33,7 @@ class MaxBinaryHeap {
 
     // bubble down
     let idx = 0;
-    while (true) {  // eslint-disable-line no-constant-condition
+    while (true) {
       const leftChildIdx = 2 * idx + 1;
       const rightChildIdx = 2 * idx + 2;
 

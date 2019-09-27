@@ -1,0 +1,18 @@
+PRIORITY QUEUES
+
+A data structure where each element has a priority. Elements with higher priorities
+are served before elements with lower priorities.
+
+A collection of data where each element has a priority associated with it.
+
+We take one thing at a time out of it - depending on its priority.
+
+Binary heap is a good way to implement it.
+We can use an array for implementation - but for each operation we have O(n)time.
+
+pseudocode:
+- write a min binary heap - lower number means higher priority
+- each node has a value and a priority; use the priority to build the heap
+- "enqueue" method accepts value and priority, makes a new node, and puts
+  it in the right spot based off its priority
+- "dequeue" method removes root element, returns it, and rearranges heap using priority
