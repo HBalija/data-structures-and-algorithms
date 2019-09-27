@@ -1,0 +1,21 @@
+MERGE SORT:
+
+introduced by John von Neumann in 1948.
+
+- combination of 3 things: splitting, merging and sorting
+- exploits the fact that arrays of 0 or 1 element are already sorted
+- works by decomposing an array into smaller arrays of 0 or 1 elements, then building
+  up a new sorted array
+- uses divide and conquer approach
+
+
+how it works:
+- break up the array into halves until you have arrays that are empty or have one element
+- once you have smaller sorted arrays, merge them with other sorted arrays until
+  you are back at the full length of the array (recursion)
+
+
+EFFICIENCY
+
+Time (best)    Time (avg)    Time (worst)    Space
+O(n log n)     O(n log n)    O(n log n)       O(n)
