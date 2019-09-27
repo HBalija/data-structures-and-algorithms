@@ -1,0 +1,97 @@
+QUICK SORT
+
+- like merge sort, exploits the fact that arrays of len 0 or 1 are sorted
+- works by selecting one element(called the "pivot"), and moving all items lesser
+  than pivot to the left, and all greater than pivot to the right
+
+
+How it works:
+
+[5,2,1,8,4,7,6,3]
+- we choose pivot: 5
+
+- move all smaller than 5 to the left
+- move all larger of 5 to the right
+
+- 5 is in the correct spot; and we know its index
+
+3,2,1,4  5  7,6,8
+
+- then we repat the process choosing new pivot on both sides
+
+
+pseudocode:
+- call the pivot helper on the array
+- recursively call quick sort with the right side and the
+  left side of pivot point (without pivot)
+- base case is to check if sub array has less than 2 items in it (not the whole array)
+
+
+
+COMPLEXITY
+
+Time (best)    Time (avg)    Time (worst)    Space
+O(n log n)     O(n log n)    O(n**2)         O(n)
+
+
+- avg: O(log n) decompositions times O(n) comparisons
+
+- pivot choice is important
+- so if array is sorted we must do o(n) decompositions times O(n) comparisons
+
+
+
+
+pivot helper:
+
+item with value 4 --> index of 3
+- 3 should be returned
+[2, 1, 3, 4, 5, 7, 6, 8]
+
+
+swapping
+[4,8,2,1,5,7,6,3]
+
+4 is pivot , idx = 0
+swapIdx = 0
+
+iteration:
+----------------------------------
+
+8 is greater than 4 --> we continue to the next element
+
+------------------------------------
+
+2 is lesser than 4
+swapIdx = 1 --> arr[1] = 8 ( we swap 2 and 8)
+[4,2,8,1,5,7,6,3]
+
+------------------------------------
+
+1 is lesser than 4
+swapIdx = 2 --> arr[2] = 8 (we swap 1 and 8)
+[4,2,1,8,5,7,6,3]
+
+-------------------------------------
+
+5 is greater than 4
+
+----------------------------------
+
+7 is greater than 4
+
+----------------------------------
+
+6 is greater than 4
+
+----------------------------------
+
+3 is less than 4
+swapidx = 3 --> arr[3] = 8 (we swap 3 and 8)
+[4,2,1,3,5,7,6,8]
+
+--------------------------------------
+
+iteration is done:
+
+we swap start index and swapIdx
