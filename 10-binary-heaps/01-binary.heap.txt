@@ -1,0 +1,83 @@
+BINARY HEAP
+
+- very similar to binary search tree, but with some different rules
+
+In a MaxBinaryHeap parent nodes are always larger than child nodes
+In a MinBinaryHeap parent nodes are always smaller than child nodes.
+
+
+RULES FOR MAX BINARY HEAP
+
+- each parent has at most two child nodes
+- the value of each parent node is ALWAYS greater than its child nodes
+- In a max Binary Heap the parent is greater than the children, but there are no
+  guarentees between sibling nodes
+- A binary heap is a compact as possible. All the children of each node are as full as
+  they can be and left children are filled out first.
+
+
+
+- relation between parent and children in a binary heap:
+
+  binary heap representation:
+
+                55
+        39              41
+    33      12      18        27
+
+
+     0   1   2   3   4   5   6
+  [ 55, 39, 41, 33, 12, 18, 27 ]
+
+
+parentIdx = Math.floor((idx - 1) / 2)    # 12 (idx = 4) --> parent: 39 (idx = 1)
+
+leftChildIdx = 2 * idx + 1;     # 41 (idx = 2) --> left child: 18 (idx = 5)
+rightChildIdx = 2 * idx + 2;    # 41 (idx = 2) --> right child 27 (idx = 6)
+
+
+
+METHODS:
+
+
+INSERT
+
+Adding to MaxBinaryHeap
+
+- Add to the end
+- Bubble up (swap it until it has found its correct place)
+  - compare new node to its parent and swap if required; repeat the process
+
+pseudocode:
+-push the value into the values property on the heap
+- bubble the value up to its correct spot: "bubble up"
+  - create a variable called index which is the length - 1
+  - create a variable called parentIndex which is the floor of (index-1)/2
+  - keep looking as long as values element on the parentIndex are less than the
+    values element at the child index
+    - swap the values
+    - set the index to be parentIndex, start over
+
+
+
+REMOVE
+
+Remove max value (the root)
+
+- remove the root (first element from the list)
+- put the last element on its spot
+- bubble down:
+  - compare current root with its children, take the larger one and swap
+  - repeat procedure
+
+pseudocode:
+- swap the first value property with the last one
+- pop from the values property, so you can return the value at the end
+- have the new root "sink down" to the correct spot:
+  - parent index starts at 0
+  - find the index of the left child: 2 * index + 1 (make sure it's not out of bonds)
+  - find the index of the right child: 2 * index + 2 (make sure it's not out of bonds)
+  - swap with the larger child (if larger than rott)
+  - the child index swapped becomes the new parent index
+  - loop over and repeat
+- return old root
