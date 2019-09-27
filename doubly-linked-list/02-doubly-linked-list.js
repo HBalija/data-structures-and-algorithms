@@ -166,7 +166,6 @@ class DoublyLinkedList {
 }
 
 const list = new DoublyLinkedList();
-
 list.push(':');
 list.push('Hello');
 list.push('there');

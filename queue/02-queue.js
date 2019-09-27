@@ -20,6 +20,7 @@ class Queue {
     this.last = null;
   }
 
+
   push(val) {
     const node = new Node(val);
 

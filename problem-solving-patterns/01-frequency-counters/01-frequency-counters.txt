@@ -1,0 +1,6 @@
+FREQUEUNCY COUNTERS
+
+- this pattern uses objects or sets to collect values / frequencies of values
+- using it can often avoid the need for nested loops or O(n**2) operations with arrays / strings
+- used for comparing inputs
+- gets to O(n)
