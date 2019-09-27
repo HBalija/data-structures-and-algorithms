@@ -1,0 +1,79 @@
+RADIX SORT
+
+
+Special sorting algorithm that works on lists of numbers
+
+- it never makes comparisons between elements
+- it exploits the fact that information about the size of a number is encoded
+  in the number of digits (more digits, the number is larger)
+
+
+
+How does it work:
+
+- we have a list of numbers [908, 9, 76, 56, 33]
+
+
+- we create buckets from 0-9 (base 10 numbers), so 0,1,2,3,4,5,6,7,8,9
+
+
+- we place numbers in those buckets depending on right most position of the number
+  (1968 goes to bucket 8)
+
+                                           56
+                    33                     76              908      9
+
+ 0     1      2      3       4      5       6       7       8       9
+
+- then we form a list out of these numbers, in order they were in bucket
+[33, 76, 56, 908, 9]
+
+
+- then we repeat the process grouping all numbers based on the second digit on the right
+- numbers that have only 1 digit will go to 0 group
+
+ 9
+908                 33             56              76
+ 0     1      2      3       4      5       6       7       8       9
+
+ [908, 9, 33, 56, 76]
+
+
+ - repeat the process (3rd from the right in the bucket)
+
+76
+56
+33
+ 9                                                         908
+ 0     1      2      3       4      5       6       7       8       9
+
+ [9, 33, 56, 76, 908]
+
+
+Number of times we have to do this process depends on the number of digits the
+largest number has.
+
+
+
+
+PSEUDOCODE
+
+- define a function that accepts a list on numbers
+- figure out how many digits the largest number has
+- loop from i = 0 up to that largest num of digits
+- for each iteration:
+  - create buckets for each digit (0 to 9) (10 buckets - lists)
+  - place each number in corresponding bucket based on its kth digit
+  - replace our existing array with values in buckets starting with 0
+    and going up to 9
+- return list in the end
+
+
+
+COMPLEXITY
+
+Time (best)     Time (average)      Time (worst)      Space
+O(nk)           O(nk)               O(nk)             O(n + k)
+
+n - length of array
+k - number of digits

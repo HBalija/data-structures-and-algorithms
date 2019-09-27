@@ -17,7 +17,7 @@ How it works:
 
 3,2,1,4  5  7,6,8
 
-- then we repat the process choosing new pivot on both sides
+- then we repeat the process choosing new pivot on both sides
 
 
 pseudocode:

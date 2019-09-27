@@ -1,4 +1,4 @@
-#!/usr/bin/env python3def pivot(lst, start=0):
+#!/usr/bin/env python3
 
 
 def pivot(lst, start=0):
