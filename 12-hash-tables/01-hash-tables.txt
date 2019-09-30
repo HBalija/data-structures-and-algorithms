@@ -42,3 +42,52 @@ Deletion: O(1)
 Access: O(1)
 
 with bad hash functions - these can be O(n)time
+
+
+
+COLLISION HANDLING:
+
+1) Separate Chaining
+  - at each index in our array we can store multiple values by using a more
+    sophisticated data structure (example array or linked list)
+    - we get nested data structure - see image
+
+    from image:
+    - so we look for "salmon", we get 4, we go to arrays index 4 and we loop
+      through to get "salmon" value out
+
+2) Linear Probing
+  - when we find a collision, we search through array to find the next empty
+    slot
+  - so we store 1 element to each array position
+
+
+
+PSEUDOCODE:
+
+
+SET
+
+- function accepts key and value
+- hashes the key
+- stores the key-value pair in the hash table array via separate chaining
+
+
+
+GET
+
+- accepts a key
+- hashes the key
+- retrieve the value via separate chaining (by looping through array stored at that index)
+- if the key isn't found, return undefined
+
+
+KEYS
+
+- loops through the hash table array and returns an array of keys
+
+
+
+VALUES
+
+- loops through the hash table array and returns an array of values in the table
