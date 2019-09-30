@@ -1,0 +1,79 @@
+GRAPH TRAVERSAL
+
+- visiting each vertex in a graph
+
+
+USES:
+- peer to peer networking
+- web crawlers
+- finding "closest" matches / recomendations
+- shortest path problems:
+  - GPS navigation
+  - solving mazes
+  - AI (shortest path to win a game)
+
+
+
+DEPTH FIRST TRAVERSAL
+
+- from a node:
+  - we go to a next node and visit its neighbours (we move away from starting point)
+  - it's important to remember where we have been
+  - sometimes we need to return to node we have visited to move on with traversal
+
+basic idea: we follow a branch down
+
+
+BREADTH FIRST TRAVERSAL
+
+- visit neighbours at current depth first
+- then return to a first neighbour and visit its neighbours
+
+
+
+METHODS
+
+
+DFS - recursive
+
+pseudocode:
+- the function should accept a starting node
+- create a list to store the end result, to be returned at the very end
+- create an object to store visited vertices
+- create a helper function which accepts a vertex
+  - the helper function should return early if the vertex is empty
+  - it should place the vertex it accepts into the visited object and push
+    that vertex into the results array
+  - loop over all the values in the adjacency list for that vertex
+  - if any of values have not been visited, recursively invoke helper function
+    with that vertex
+- invoke the helper function with the starting vertex
+- return the results array
+
+
+DFS - iterativly
+
+pseudocode
+- the function should accept a starting node
+- create a stack to help use keep of vertices (an array)
+- create a results list; return it in the end
+- create a marked object
+- push the starting vertex to the stack and mark it visited
+- while stack not empty
+- pop the next item
+  - if that item not marked, mark it and push it to results
+  - push its neighbours to the stack
+
+
+BFS
+
+- this function should accept a starting vertex
+- create a queue (use an array) and place the starting vertex in it
+- create an array to store the nodes visited
+- mark the starting vertex as visited
+- loop as long as there is something in the queue
+- remove the first vertex from the queue and push it into the array that stores
+  nodes visited
+- loop over each vertex in the adjacancy list for the visiting vertex
+- if it is not inside the mark object, mark it as visited and enqueue that vertex
+- return values list
