@@ -1,0 +1,44 @@
+HASH TABLES
+
+- hash tables are used to store key - value pairs
+- keys are not ordered
+
+- unlike arrays, hash tables are fast for these operations:
+  finding values, adding new values, removing values
+
+
+IMPLEMENTATION of associative array:
+
+To implement a hash table, we'll be using an array.
+
+In order to look up values by key, we need a way to convert keys into valid array indices.
+A function that performs this task is called a hash function.
+
+
+HASH FUNCTION
+
+Function that takes data of arbitrary size, and it is going to return data
+of fixed size. It is going to map input to an output of a fixed size.
+
+--> len of hash return is always the same!
+
+
+What makes a good hash function:
+- not a cryptographically secure one
+
+1. Fast (i.e. constant time)
+2. Doesn't cluster outputs at specific indices, but distributes uniformly
+3. Deterministic (same input returns same output)
+
+--> hash functions take advantage of prime numbers
+--> it is also helpfull if array for storing data has a prime length
+
+
+
+Big O of hash tables (average case)
+
+Insert: O(1)
+Deletion: O(1)
+Access: O(1)
+
+with bad hash functions - these can be O(n)time
