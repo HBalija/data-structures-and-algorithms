@@ -1,0 +1,40 @@
+GRAPHS
+
+
+Graph - collection of nodes and connections between these nodes
+- tree has parent nodes (graphs don't)
+
+USAGE:
+- social networks
+- location / mapping
+- routing algorithms
+- visual hierarchy
+- file system optimizations
+- EVERYWHERE!
+
+GRAPH TERMS:
+
+- Vertex - a node
+- Edge - connection between the nodes
+- Weighted / Unweighted - values assigned to distances between vertices
+- Directed / Undirected - directions assigned to distances between vertices
+
+Directed vs Undirected
+- directed is more "one - way relationship"
+- directed is often represented with arrows which indicates connection (polarity of edge)
+
+
+RELATIONSHIPS BETWEEN VERTICES
+
+ADJECENCY MATRIX
+- matrix is a two dimensional structure usually implemented with nested arrays
++ can take up less space (in sparse graphs)
++ faster to iterate over all edges
+- can be slower to lookup specific edge
+
+ADJECENCY LIST
+  - we use array to store the edges
+  - or if we have numeric nodes or similar, we can use a hash table (dict, object, map)
+- takes up more space (in sparse graphs)
+- slower to iterate over all edges
++ faster to lookup specific edge
