@@ -76,3 +76,26 @@ HOW IT WORKS
     to get to D, we came from  C
     to get to C, we came from A
     (p3)
+
+
+PSEUDOCODE:
+
+- this function should accept a starting and ending vortex
+- create an object (distances) and set each key to be to be every vertex in
+  the adjacency list with a value of infinity, except for the starting vertex
+  which should have a value of 0
+- after setting values in distances object, add each vertex with a priority
+  of infinity to the priority queue, except the starting vertex, which should
+  have a priority of 0 because that's where we begin
+- create another object called previous and set each key to be every vertex in
+  the adjacency list with a value of null
+- start looping as long as there is anything in priority queue
+  - dequeue a vertex from the priority queue
+  - if that vertex is the same as the ending vertex - we are done!
+  - otherwise loop through each value in the adjacency list at that vertex
+    - calculate the distance to that vertex from the starting vertex
+    - if the distance is less than what is currently stored in our distances
+      object:
+        - update the distances object with new lower distance
+        - update the previous object to contain that vertex
+        - enqueue the vertex with the total distance from the start node
