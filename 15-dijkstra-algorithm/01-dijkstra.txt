@@ -1,0 +1,78 @@
+Dijkstra's shortest path algorithm
+
+- finds the shortest path between two vertices on  a graph
+
+"Whats's the shortest way to get from point A to point B?"
+
+
+WHY IS IT USEFUL?
+- GPS - finding fastest route
+- network routing - finding open shortest path for data
+- biology - used to model the spread of viruses among humans
+- airline tickets - finding cheapest route to your destination
+- many other uses!
+
+
+HOW IT WORKS
+
+- we need to start from a "start point" and visit nodes:
+
+1. Every time we look to visit a new node, we pick the node with the smallest
+   known distance to visit first.
+
+2. Once we've moved to that node we're going to visit, we look at each of its neighbours
+
+3. For each neighboring node, we calculate the distance by summing the total
+   edges that lead to the node we're checking from the STARTING node
+
+4. If the new total distance to a node is less than the previous total,
+   we store the new shorter distance for that node.
+
+
+   - at the beginning this is A
+   - we update visited array with A
+   (p1)
+   - we have 2 choices (A --> B, A --> C)
+   - so we go from A to B (arbitrary) --> new shortest distanca = 4 (less than infinity); we update
+     the distance
+   - we update previous object --> telling that previous of B was A
+   - then we go from A to C (arbitrary) --> new shortest distnce = 2, we update the distance
+   - we update previous object --> telling that previous of C was A
+   (p2)
+   - then we pick the smallest distance from A to visit (C --> less distance)
+   - now we have C --> D and C --> F
+   - we take C --> D (arbitrary), and calculate the new value from A to D (through C):
+      previous from C is A with a distance of 2, and C to D is 2; --> we get 4 (smaller than inf)
+   - we update in previous how we got to D (we get there through C)
+   (p3)
+   - move from C to F, repeat the process
+
+   - now we have B (4), D (4), F (6) --- (paths from A)
+   - we can choose from B and D
+   - we take B;
+   - we have B --> E; A to E through B is 7
+   - we store the value
+   - we update E previous object that we got there from B
+
+   - next smallest is D
+
+   - D: E: total distance from A to E through D is 7 (we already have 7, so we don't update)
+
+   - D: F: total distance from A to F through D is 5 (update inf value)
+   - we mark previous path of F to be D
+
+   - 5 si smaller than 7 se we start from F
+
+   - F to E: distance from A to E through F is 6 (smaller than current value), we store prev on E
+   - we also store path
+
+
+   - note: we also mark visited nodes when we are done with them
+
+   - so to get from A to E:
+    we start at E: - look at prev obj;
+    to get to E, we came from F
+    to get to F, we cam from D
+    to get to D, we came from  C
+    to get to C, we came from A
+    (p3)
