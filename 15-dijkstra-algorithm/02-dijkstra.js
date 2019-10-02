@@ -1,26 +1,84 @@
 /*
 Dijkstra shortest path algorithm using array as priority queue.
+
+Insertion and removal - O(log n)time.
 */
 
-class PriorityQueue {
-  // Not very efficient - sort() --> O(n)time
+class Node {
+  constructor(val, priority) {
+    this.val = val;
+    this.priority = priority;
+  }
+}
 
+class PriorityQueue {
   constructor() {
     this.values = [];
   }
 
   enqueue(val, priority) {
-    this.values.push({ val, priority });
-    this.sort();
+    const newNode = new Node(val, priority);
+    this.values.push(newNode);
+    this.bubbleUp();
+  }
+
+  bubbleUp() {
+    let idx = this.values.length - 1;
+    const element = this.values[idx];
+    while (idx > 0) {
+      const parentIdx = Math.floor((idx - 1) / 2);
+      const parent = this.values[parentIdx];
+      if (element.priority >= parent.priority) break;
+      this.values[parentIdx] = element;
+      this.values[idx] = parent;
+      idx = parentIdx;
+    }
   }
 
   dequeue() {
-    return this.values.shift();
+    const min = this.values[0];
+    const end = this.values.pop();
+    if (this.values.length > 0) {
+      this.values[0] = end;
+      this.sinkDown();
+    }
+    return min;
   }
 
-  sort() {
-    this.values.sort((a, b) => a.priority - b.priority);
+  sinkDown() {
+    let idx = 0;
+    const length = this.values.length;
+    const element = this.values[0];
+    while (true) {
+      const leftChildIdx = 2 * idx + 1;
+      const rightChildIdx = 2 * idx + 2;
+      let leftChild, rightChild;
+      let swap = null;
+
+      if (leftChildIdx < length) {
+        leftChild = this.values[leftChildIdx];
+        if (leftChild.priority < element.priority) {
+          swap = leftChildIdx;
+        }
+      }
+
+      if (rightChildIdx < length) {
+        rightChild = this.values[rightChildIdx];
+        if (
+          (!swap && rightChild.priority < element.priority) ||
+          (swap && rightChild.priority < leftChild.priority)
+        ) {
+          swap = rightChildIdx;
+        }
+      }
+
+      if (!swap) break;
+      this.values[idx] = this.values[swap];
+      this.values[swap] = element;
+      idx = swap;
+    }
   }
+
 }
 
 
@@ -75,8 +133,8 @@ class WeightedGraph {
       - find neighboring node:
         - calculate new distance to neighbouring node (using previous)
           -  if smaller than previous distance for that neighbouring node
-            - store it (line 82)
-            - update previous for that node with current iterating node (line 83)
+            - store it
+            - update previous for that node with current iterating node
             - enqueue neighbor node in priority queue with new priority of candidatDistance
     */
     while (nodes.values.length) {
@@ -140,4 +198,4 @@ graph.addEdge('E', 'F', 1);
 */
 
 console.log(graph.dijkstra('A', 'E'));
-// [['A', 'C', 'D', 'E', 'F], 6]
+// [ [ 'A', 'C', 'D', 'E', 'F ], 6 ]
